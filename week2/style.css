@@ -8,8 +8,8 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #282689;
-    color: #fff;
+    background-color: #755e68;
+    color: #a525a5;
     text-align: center;
     padding: 20px;
 }
@@ -144,8 +144,8 @@ main h3 {
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: #ffffff;
+    background-color: #90c116;
+    color: #591414;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -154,7 +154,7 @@ main h3 {
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #ca1414;
 }
 
 /* Footer Styles */
