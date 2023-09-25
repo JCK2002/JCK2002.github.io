@@ -12,6 +12,8 @@ header {
     color: #48ff00;
     text-align: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
 }
 
 .headeraH1 {
