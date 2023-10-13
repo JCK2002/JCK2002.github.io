@@ -13,6 +13,7 @@ header {
     text-align: center;
     padding: 20px;
     position: sticky;
+    position: jquery;
     top: 0;
 }
 
@@ -30,7 +31,6 @@ header {
     height: auto;
     display: block;
 }
-
 
 /* Navigation Styles */
 nav ul {
