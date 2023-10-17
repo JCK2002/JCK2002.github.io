@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Registration</h1>
+  <form id="registrationForm">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <div class="error" id="usernameError"></div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <div class="error" id="emailError"></div>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <div class="error" id="passwordError"></div>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <div class="error" id="confirmPasswordError"></div>
+    </div>
+
+    <button type="submit" id="submitBtn">Register</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const usernameError = document.getElementById('usernameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function validateUsername() {
+      if (username.value === '') {
+        usernameError.textContent = 'Username cannot be empty.';
+        username.classList.add('error');
+        return false;
+      }
+      usernameError.textContent = '';
+      username.classList.remove('error');
+      username.classList.add('success');
+      return true;
+    }
+
+    function validateEmail() {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (email.value === '') {
+        emailError.textContent = 'Email cannot be empty.';
+        email.classList.add('error');
+        return false;
+      }
+      if (!emailPattern.test(email.value)) {
+        emailError.textContent = 'Invalid email format.';
+        email.classList.add('error');
+        return false;
+      }
+      emailError.textContent = '';
+      email.classList.remove('error');
+      email.classList.add('success');
+      return true;
+    }
+
+    function validatePassword() {
+      if (password.value === '') {
+        passwordError.textContent = 'Password cannot be empty.';
+        password.classList.add('error');
+        return false;
+      }
+      if (password.value.length < 8) {
+        passwordError.textContent = 'Password must be at least 8 characters long.';
+        password.classList.add('error');
+        return false;
+      }
+      passwordError.textContent = '';
+      password.classList.remove('error');
+      password.classList.add('success');
+      return true;
+    }
+
+    function validateConfirmPassword() {
+      if (confirmPassword.value === '') {
+        confirmPasswordError.textContent = 'Confirm Password cannot be empty.';
+        confirmPassword.classList.add('error');
+        return false;
+      }
+      if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = 'Passwords do not match.';
+        confirmPassword.classList.add('error');
+        return false;
+      }
+      confirmPasswordError.textContent = '';
+      confirmPassword.classList.remove('error');
+      confirmPassword.classList.add('success');
+      return true;
+    }
+
+    function validateForm() {
+      const isUsernameValid = validateUsername();
+      const isEmailValid = validateEmail();
+      const isPasswordValid = validatePassword();
+      const isConfirmPasswordValid = validateConfirmPassword();
+
+      return isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
+    }
+
+    form.addEventListener('submit', function (e) {
+      if (!validateForm()) {
+        e.preventDefault(); // Prevent form submission
+      }
+    });
+
+    username.addEventListener('blur', validateUsername);
+    email.addEventListener('blur', validateEmail);
+    password.addEventListener('blur', validatePassword);
+    confirmPassword.addEventListener('blur', validateConfirmPassword);
+  </script>
+</body>
+</html>
