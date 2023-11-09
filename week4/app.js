@@ -1,8 +1,8 @@
 var apiKey = '54bfcce172b4929f96d8e407b33359c5'; // Replace with your actual API key
 var weatherContainer = document.getElementById("weather-info");
-var btn = document.getElementById("btn");
+var btn2 = document.getElementById("btn2");
 
-btn.addEventListener("click", function() {
+btn2.addEventListener("click", function() {
   var city = document.getElementById('cityInput').value;
   if (!city) {
     alert("Please enter a city name!");
