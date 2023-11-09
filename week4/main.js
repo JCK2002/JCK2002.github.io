@@ -3,7 +3,7 @@ var btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
 var ourRequest = new XMLHttpRequest();
 
-ourRequest.open('GET', 'https://jck2002.github.io/week4/cities1.json');
+ourRequest.open('GET', 'https://JCK2002.github.io/JCK2002.github.io/week4/cities1.json');
 
 ourRequest.onload = function() {
 var ourData = JSON.parse(ourRequest.responseText);
