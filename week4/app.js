@@ -1,4 +1,4 @@
-var apiKey = '54bfcce172b4929f96d8e407b33359c5'; // Replace with your actual API key
+var apiKey = 'ef5072af49b0a9a40c30e997f1f872a0'; // Replace with your actual API key
 var weatherContainer = document.getElementById("weather-info");
 var btn2 = document.getElementById("btn2");
 
